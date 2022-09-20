@@ -9,6 +9,8 @@ Special thanks to @jdewinne for code and content contributions that made this tr
 Slides Here: (To do)
 Recording Here: (To do) 
 
-### The Workshop
+The Workshop
+--------------
 
 Check out [workshop.md](workshop.md) for the workshop outline and steps
+

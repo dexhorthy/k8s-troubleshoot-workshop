@@ -1,12 +1,3 @@
-Troubleshoot.sh Workshop
-=================
-
-Source code for a workshop presented at DevOps Days Chicago 2022.
-
-This content is very much a standing-on-the-shoulders-of-giants presentation. 
-Special thanks to @jdewinne for code and content contributions that made this track what it is today.
-
-
 ### Overview
 
 - Introduction - What this toolkit is for
@@ -38,17 +29,26 @@ Special thanks to @jdewinne for code and content contributions that made this tr
   - **cluster resize**
   - kubectl support-bundle
   - **kubectl patch**
-- Hands on with the basics of Troubleshoot.sh
-  - Collecting available cluster cpu
-  - Analyzing available cluster cpu
-    - adding a node
+- Hands on with the basics of Troubleshoot.sh 
+  - prologue: maxing out node CPU
+  - prologue: deploying the app
+  - Collecting cluster resources
+  - collecting a bundle
+  - what's in a bundle - deployments
+  - Analyzing deployment statuses
+  - what's in a bundle - pod status
+  - Analyzing pod statuses
+    - adding a node (or deleting the offending workflow)
     - reverse-testing our analyzer
-  - Analyzing workload status
+  - Aside: Cleanup and Iterating on bundles
   - Collecting Pod Logs
+  - what's in the pod logs
   - Analyzing Pod Logs
-  - Exercise for the workshop -- can you inspect that annotation without reading the logs?
+  - Aside: previous / double
+  - Exercise for the workshop -- can you inspect that annotation without reading the logs? (hint: use jsoncompare)
   - Execing Pods
-  - Exercise for the workshop -- can you analyze the output of the pod exec output?
+  - Exercise for the workshop -- can you analyze the output of the pod exec output and warn if it's using the default? (see if its default nginx or not)
+  - Exercise for the workshop -- can you do the same with an http collector instead?
 - more exercises - my favorite spec:
   - num nodes
   - total memory
