@@ -1,0 +1,44 @@
+# a pod to peg the CPU on a node to simulate exhausted cluster resources
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: load-ns
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: load-app
+  namespace: load-ns
+  labels:
+    app: load
+spec:
+  selector:
+    matchLabels:
+      app: load
+  template:
+    metadata:
+      labels:
+        app: load
+    spec:
+      containers:
+        - name: load
+          resources:
+            requests:
+              cpu: 256m
+          image: busybox
+          command:
+            - /bin/sh
+            - -c
+            - |
+              cat /dev/zero > /dev/null &
+              cat /dev/zero > /dev/null &
+              cat /dev/zero > /dev/null &
+              cat /dev/zero > /dev/null &
+              cat /dev/zero > /dev/null &
+              cat /dev/zero > /dev/null &
+              cat /dev/zero > /dev/null &
+              cat /dev/zero > /dev/null &
+              wait
+
+
