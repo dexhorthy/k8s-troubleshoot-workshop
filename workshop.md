@@ -11,7 +11,7 @@ Outline
 4. Providing feedback to end users to fix problems
 5. Additional Challenges for the brave
  
-Prerequisites: A Small K8s cluster
+Prerequisite: A Small K8s cluster
 --------
 
 A small Kubernetes cluster. For the CPU constraint logic to work as intended, a single-node cluster with 1 CPU core is recommended. Docker desktop or minikube are appropriate choices here. With GKE, you can accomplish this with:
@@ -32,6 +32,13 @@ You can validate access with
 ```shell
 kubectl get node
 ```
+
+Prerequisite: Krew Package Manager for Kubectl
+--------
+
+Head over to [install krew.dev on your workstation](https://krew.sigs.k8s.io/docs/user-guide/setup/install/) to get the `kubectl krew` command working.
+We'll use this later to install the `support-bundle` plugin.
+
  
 Workshop Steps
 ------------
