@@ -11,6 +11,7 @@
     - this is a devops conference why are you building tools for the wall? - we'll get there 
   - Faster than playing 20 questions with kubectl
   - Distribution vs. Delivery - packaged software vs. fully integrated
+  - Where does this fit - unix tools, kubectl, tshoot/k9s, grafana, splunk, appd, etc
 - deploy the app
 - Without troubleshoot
   - kubectl get svc

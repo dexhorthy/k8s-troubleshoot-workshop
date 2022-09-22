@@ -23,9 +23,9 @@ spec:
             - /bin/sh
             - -c
             - |
-              for i in $(seq 1 100); do echo "INFO  - starting up $i"; sleep .1; done
+              for i in $(seq 1 10); do echo "INFO  - starting up $i"; sleep .1; done
               if [ -n "$PREVENT_START" ]; then echo 'ERROR - please disable metadata.annotations["com.example.myapp/prevent-start"]' to allow starting; fi
-              for i in $(seq 101 200); do echo "INFO  - starting up $i"; sleep .1; done
+              for i in $(seq 11 60); do echo "INFO  - starting up $i"; sleep .1; done
               if [ -n "$PREVENT_START" ]; then echo 'ERROR - gonna crash now :+1: good luck figuring out why'; fi
               if [ -n "$PREVENT_START" ]; then exit 1; fi
 

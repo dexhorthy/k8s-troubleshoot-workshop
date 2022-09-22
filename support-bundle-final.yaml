@@ -1,0 +1,50 @@
+apiVersion: troubleshoot.sh/v1beta2
+kind: SupportBundle
+metadata:
+  name: supportbundle-tutorial
+spec:
+  collectors:
+    - clusterInfo: {}
+    - clusterResources:
+       namespaces:
+        - default
+    - logs:
+       name: pod-logs
+       selector:
+         - app=my-app
+  analyzers:
+    - deploymentStatus:
+        checkName: Deployment Status
+        name: my-app
+        namespace: default
+        outcomes:
+          - fail:
+              when: "< 1"
+              message: No ready replicas
+          - pass:
+              when: "= 1"
+              message: At least one replica is ready
+    - clusterPodStatuses:
+        name: unhealthy
+        namespaces:
+          - default
+        outcomes:
+          - fail:
+              when: "= Pending"
+              message: 'Pod {{ .Name }} is unhealthy with a status of {{ .Status.Reason }}: {{ range .Status.Conditions }}{{.Reason}} -- {{.Message}}{{end}}'
+          - fail:
+              when: "!= Healthy"
+              message: 'Pod {{ .Name }} is unhealthy with a status of {{ .Status.Reason }}'
+    - textAnalyze:
+        checkName: No Errors in Logs
+        fileName: pod-logs/*.log
+        regex: 'prevent-start'
+        outcomes:
+          - pass:
+              when: "false"
+              message: "No concerning logs found"
+          - fail:
+              when: "true"
+              message: |
+                There's an error in startup -- if you forgot to remove prevent-start, try removing the `com.example.myapp/prevent-start` annotation
+              uri: https://github.com/dexhorthy/k8s-troubleshoot-workshop/blob/main/patching-prevent-start.md
