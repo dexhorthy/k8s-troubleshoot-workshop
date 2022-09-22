@@ -41,11 +41,11 @@ Workshop Steps
 If you started this workshop but are now coming back to it and want to start fresh, you can run the following. Note that this will delete everything running in your default namespace
 
 ```text
-kubectl delete deploy,svc -n default -l app=myapp
+kubectl delete deploy,svc -n default -l app=my-app
 kubectl delete ns load-ns
 ```
 
-If you're in GKE and you scaled up your cluster, don't forget to scale it back down.
+If you're using GKE and you scaled up your cluster, don't forget to scale it back down.
 
 
 ```shell
@@ -509,6 +509,14 @@ my-app       LoadBalancer   10.159.247.34   104.154.133.147   80:30533/TCP   31h
 
 ![ngninx](./img/nginx.png)
 
+#### Exercise for the workshop -- test with a url spec
+
+Troubleshoot.sh specs don't have to be hosted locally -- you can also host them on the web somewhere:
+
+```shell
+kubectl support-bundle https://raw.githubusercontent.com/dexhorthy/k8s-troubleshoot-workshop/main/support-bundle-final.yaml
+```
+
 
 #### Exercise for the workshop -- inspecting without logs
 
@@ -524,7 +532,7 @@ Try exploring the [JSONCompare](https://troubleshoot.sh/docs/analyze/json-compar
 
 A good sanity check for any webserver is to see if it's (whoops!) serving the default nginx content (which our example app happens to do). 
 
-Can you modify you support-bundle.yaml to detect if we have a webserver that's serving a default 'Welcome to nginx' page?
+Can you modify your support-bundle.yaml to detect if we have a webserver that's serving a default 'Welcome to nginx' page?
 
 <details>
   <summary>Expand for a hint</summary>

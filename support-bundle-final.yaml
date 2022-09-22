@@ -1,12 +1,12 @@
 apiVersion: troubleshoot.sh/v1beta2
 kind: SupportBundle
 metadata:
-  name: supportbundle-tutorial
+  name: workshop
 spec:
   collectors:
     - clusterInfo: {}
     - clusterResources:
-       namespaces:
+        namespaces:
         - default
     - logs:
        name: pod-logs
@@ -46,5 +46,5 @@ spec:
           - fail:
               when: "true"
               message: |
-                There's an error in startup -- if you forgot to remove prevent-start, try removing the `com.example.myapp/prevent-start` annotation
+                There's an error in startup -- if you forgot to prevent preventing starting, try removing the 'com.example.myapp/prevent-start' annotation
               uri: https://github.com/dexhorthy/k8s-troubleshoot-workshop/blob/main/patching-prevent-start.md
