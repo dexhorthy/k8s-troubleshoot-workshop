@@ -10,6 +10,8 @@ Outline
 3. Using support bundles to understand workload behvior
 4. Providing feedback to end users to fix problems
 5. Additional Challenges for the brave
+
+[Video Recording](https://youtu.be/Syo5yAmHCVw?t=23043) | [Slides](https://docs.google.com/presentation/d/1gWLjNP-FxgMI9doKQkzM6P4uyfx8Awf5J69hyAmcajs/edit#slide=id.gac28e45d00_0_147)
  
 Prerequisite: A Small K8s cluster
 --------
