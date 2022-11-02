@@ -267,7 +267,7 @@ kubectl support-bundle support-bundle.yaml
 
 You should see some helpful information displayed once the bundle is finished analyzing: 
 
-![deployment-analyzer](../img/deployment-analyzer.png)
+![deployment-analyzer](./img/deployment-analyzer.png)
 
 
 #### What's in a bundle - pod statuses
@@ -340,7 +340,7 @@ kubectl support-bundle support-bundle.yaml
 Using the arrow keys to navigate, you should see the pod failure reason surfaced in an analyzer.
 
 
-![pod-analyzer](../img/pod-analyzer.png)
+![pod-analyzer](./img/pod-analyzer.png)
 
 
 #### Fixing the environment 
@@ -362,11 +362,11 @@ kubectl support-bundle support-bundle.yaml
 
 You should see some new info:
 
-![still-no-deploy](../img/still-no-deploy.png)
+![still-no-deploy](./img/still-no-deploy.png)
 
 Progress, but things still arent working. 
 
-![pod-crashloop](../img/pod-crashloop.png)
+![pod-crashloop](./img/pod-crashloop.png)
 
 Looks like our pod was scheduled now, but it's in CrashLoopBackoff.
 
